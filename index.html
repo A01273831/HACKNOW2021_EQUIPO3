@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>HACKNOW 2021</title>
+</head>
+<body>
+    <div class="col-lg-8">                
+        <!--Modal-->
+        <div class="modal fade" id="modalAltaEdicion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-light">
+                        <h5 class="modal-title" id="exampleModalLabel">Alta / Edición</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="form-group">                                    
+                                <label for="grupo_valor">Grupo</label>
+                                <select id="grupo_valor">
+                                    <option value="Zona Metropolitana">Zona Metropolitana</option>
+                                    <option value="Interior Republica">Interior de la República</option>
+                                </select>
+                           </div>    
+                            <div class="form-group"><!-- ID que vamos a recibir de firebase -->                                    
+                                 <label>Número de cuenta</label>
+                                <input id="numero_de_cuenta" type="text" class="form-control" required>
+                            </div>    
+                            <div class="form-group">
+                                <label>Nombre del cliente</label>
+                                <input id="nombre_cliente" type="text" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Domicilio</label>
+                                <input id="domicilio" type="text" class="form-control">
+                            </div>    
+                            <div class="form-group">                                    
+                                <label>Colonia</label>
+                                <input id="colonia" type="text" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Población</label>
+                                <input id="poblacion" type="text" class="form-control">
+                            </div>    
+                            <div class="form-group">                                    
+                                <label>CP</label>
+                                <input id="cp" type="text" class="form-control">
+                            </div>    
+                            <div class="form-group">                                    
+                                <label>Telefono 1</label>
+                                <input id="telefono1" type="tel" class="form-control">
+                            </div>    
+                            <div class="form-group">                                    
+                                <label>Respuesta Telefono 1</label>
+                                <input id="respuestatel1" type="checkbox" class="Rent">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Celular</label>
+                                <input id="celular" type="tel" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Respuesta Celular</label>
+                                <input id="respuestacel" type="checkbox" class="Rent" >
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Mail</label>
+                                <input id="mail" type="email" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Telefono 2</label>
+                                <input id="telefono2" type="tel" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Respuesta Telefono 2</label>
+                                <input id="respuestatel2" type="checkbox" class="Rent">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Saldo</label>
+                                <input id="saldo" type="number" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>D. Efectivo</label>
+                                <input id="defectivo" type="number" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Ultimo Pago</label>
+                                <input id="ultimopago" type="date" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Fecha corte</label>
+                                <input id="fechacorte" type="number" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Fecha asignación</label>
+                                <input id="fechaasign" type="number" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label>Gestor</label>
+                                <input id="gestor" type="text" class="form-control">
+                            </div> 
+                            <div class="form-group">                                    
+                                <label for="status_group">Status</label>
+                                <select id="status_group">
+                                    <option value="Ilocalizable">Ilocalizable</option>
+                                    <option value="Contactado">Contactado</option>
+                                    <option value="Renuente">Renuente</option>
+                                    <option value="Convenio de pagos">Convenio de pagos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">                                    
+                                <label>Precastigo</label>
+                                <input id="precastigo" type="checkbox" class="Rent" name="precastigoname">
+                            </div> 
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" tabindex="2">Cancelar</button>
+                            <button type="submit" value="btnGuardar" class="btn btn-primary" translate="1">Guardar</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <div class="CustomerTable">
+        <table id="CustomerTable" class="table table-striped table-bordered" style="width:100%">
+        <thead class="text-center">
+                <tr>
+                    <!-- Editado-->
+                    <th>Grupo</th>
+                    <th>Número de Cuenta</th>                        
+                    <th>Nombre del Cliente</th>
+                    <th>Domicilio</th>
+                    <th>Colonia</th>
+                    <th>Población</th>           
+                    <th>CP</th>                                                          
+                    <th>Telefono1</th>
+                    <th>Confirmación Telefono 1</th>
+                    <th>Celular</th>
+                    <th>Confirmación Celular</th>
+                    <th>Mail</th>
+                    <th>Telefono2</th>
+                    <th>Confirmación Telefono 2</th>
+                    <th>Saldo</th>
+                    <th>D. Efectivo</th>
+                    <th>Ultimo Pago</th>
+                    <th>Fecha de Corte</th>
+                    <th>Fecha de Asignación</th>
+                    <th>Gestor</th>
+                    <th>Status</th>
+                    <th>Precastigo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>                           
+            </tbody>   
+        </table>
+    </div>
+    <div class="btnNuevo">
+        <button id="btnNuevo" class="btn btn-info" data-toggle="tooltip" title="Nuevo Producto"><svg class="bi bi-plus-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z"/></svg> Agregar nuevo cliente</button>               
+        <button id="addExcel" class="btn btn-info" data-toggle="tooltip" title="Agregar desde Excel"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/></svg> Agregar desde excel </button>               
+    </div> 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.14.2/dist/sweetalert2.all.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.0/firebase-database.js"></script>
+    <!-- datatables -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+    <script text="txt/javascript" src="JS/index.js"></script>
+</body>
+</html>
